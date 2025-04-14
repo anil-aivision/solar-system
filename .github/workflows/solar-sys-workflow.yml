@@ -29,7 +29,7 @@ jobs:
         - name: install dependenciess
           run: npm install
 
-        - name: unit test
+        - name: Unit Testing
           run: npm test
 
         - name: archive test results
