@@ -52,7 +52,7 @@ jobs:
         name: Code Coverage
         strategy:
           matrix:
-            nodejs_version: [18,20]
+            nodejs_version: [18]
             operating_system: [ubuntu_latest]
         runs-on: ${{matrix.operating_system}}        
         steps:
