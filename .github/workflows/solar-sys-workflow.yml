@@ -20,7 +20,7 @@ jobs:
           matrix:
             nodejs_version: [18,20]
             operating_system: [ubuntu_latest]
-        runs-on: ${{matrix.operating_system}}
+        runs-on: ${{ matrix.operating_system }}
         steps:
         - name: checkout-repository
           uses: actions/checkout@v4
