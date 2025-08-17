@@ -30,14 +30,10 @@ jobs:
           with: 
             node-version: 18
 
-        - name: Cache NPM Dependencies
-          uses: actions/cache@v4
-          with: 
-            path: node_modules
-            key: ${{runner.os}}-node-modules-${{ hashFiles('package-lock.json')}}
-
-        - name: install dependenciess
-          run: npm install
+        - name: Composite action - Cache & install NPM Packages
+          uses: ./.github/workflows/custom-actions/npm-action
+          with:
+            path-of-folder: node-modules
 
         - name: Unit Testing
           run: npm test
@@ -64,15 +60,10 @@ jobs:
           with:
             node-version: 18
         
-        - name: Cache NPM Dependencies
-          uses: actions/cache@v4
-          with: 
-            path: node_modules
-            key: ${{runner.os}}-node-modules-${{ hashFiles('package-lock.json')}}
-
-
-        - name: Install Dependencies
-          run: npm install
+        - name: Composite action - Cache & install NPM Packages
+          uses: ./.github/workflows/custom-actions/npm-action
+          with:
+            path-of-folder: node-modules
 
         - name: Check Code Coverage
           continue-on-error: true
