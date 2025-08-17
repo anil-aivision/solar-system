@@ -19,7 +19,7 @@ jobs:
         strategy:
           matrix:
             nodejs_version: [18,20]
-            operating_system: [ubuntu_latest]
+            operating_system: [ubuntu-latest]
         runs-on: ${{ matrix.operating_system }}
         steps:
         - name: checkout-repository
@@ -49,7 +49,7 @@ jobs:
         strategy:
           matrix:
             nodejs_version: [18]
-            operating_system: [ubuntu_latest]
+            operating_system: [ubuntu-latest]
         runs-on: ${{matrix.operating_system}}        
         steps:
         - name: Checkout Repository
